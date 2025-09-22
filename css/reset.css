@@ -1,0 +1,100 @@
+/* !======= Modern CSS Reset ======= */
+
+/* Box sizing: border-box для всього */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Забираємо margin по дефолту */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Встановлюємо висоту 100% для кореневих елементів */
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Зображення, відео та інші медіа */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Видаляємо стандартні стилі списків */
+ul, ol {
+  list-style: none;
+}
+
+/* Наслідуємо шрифти для форм */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Кнопки та елементи форм */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Посилання без підкреслення */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Забираємо пробіли в таблицях */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Словникові елементи */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+/* Вирівнювання тексту у form elements */
+textarea {
+  resize: vertical;
+}
+
+/* Доступність для користувачів з клавіатурою */
+:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Прибираємо спіни в input[type="number"] */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Прибираємо стрілку в select у Safari */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

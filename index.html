@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="nav js-alive-glass" id="siteNav">
+        <div class="nav__inner">
+            <h1 class="logo">
+                <span class="key">Key</span>
+                <span class="fitters">Fitters</span>
+                <span class="ltd">LTD</span>
+            </h1>
+            <nav class="nav__menu">
+                <a class="nav__link" href="#home">Home</a>
+                <a class="nav__link" href="#services">Services</a>
+                <a class="nav__link" href="#about">About</a>
+                <a class="nav__link" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="stack">
+        <section class="hero" id="home">
+            <div class="hero__card js-alive-glass">
+                <h1 class="hero__title">Transform Your Home with Expert Repair & Installation Services</h1>
+                <p class="hero__subtitle">
+                    Looking to enhance your home with precision and care? We specialize in providing
+                    top-notch repair and installation services to bring your vision to life.
+                    Whether it's a quick fix or a full renovation, we’ve got you covered.
+                </p>
+                <!-- <a class="hero__btn" href="#projects">See Our Projects</a> -->
+            </div>
+        </section>
+
+
+        <section class="services " id="services">
+            <div class="container">
+                <div class="services__content">
+                    <div class="services__text js-alive-glass">
+                        <h2 class="services__title">Our Services</h2>
+                        <ul class="services__list">
+                            <li class="services__item">Kitchen & Bathroom Installation</li>
+                            <li class="services__item">Flooring & Tiling</li>
+                            <li class="services__item">Doors & Wardrobes</li>
+                            <li class="services__item">Painting & Decorating</li>
+                            <li class="services__item">Wall & Ceiling Repairs</li>
+                            <li class="services__item">Full Fit-Out</li>
+                        </ul>
+                    </div>
+
+                    <div class="services__projects js-alive-glass">
+                        <div class="ba-wrap">
+                            <div class="ba" aria-label="Before and After slider">
+                                <img class="ba__img ba__img--before" src="img/before.jpg" alt="Before" loading="lazy">
+                                <img class="ba__img ba__img--after" src="img/after.jpg" alt="After" loading="lazy">
+
+                                <input class="ba__range" type="range" min="0" max="100" value="50"
+                                    aria-label="Compare before and after">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testi" id="about">
+            <div class="testi__viewport">
+                <div class="testi__track js-alive-glass">
+                    <article class="testi__slide">
+                        <p class="testi__quote">“I am very grateful for the job this company has done for me. They
+                            installed new bathroom and flooring in my house. Everything was done perfect. Thank you.”
+                        </p>
+                        <div class="testi__author">Barbara MC</div>
+                    </article>
+                    <article class="testi__slide">
+                        <p class="testi__quote">“Wonderful job on my bathroom! Amazing service from start to finish.
+                            Extremely professional! Thank you Key Fitters!”</p>
+                        <div class="testi__author">Max S</div>
+                    </article>
+                    <article class="testi__slide">
+                        <p class="testi__quote">“Exceptional service! Highly recommend! Everything on time and very high
+                            quality!”</p>
+                        <div class="testi__author">lan Ch</div>
+                    </article>
+                </div>
+            </div>
+            <div class="testi__dots"></div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class=" about__content js-alive-glass">
+                    <p class="about__title">
+                        7 Years of Experience
+                    </p>
+                    <p class="about__subtitle">
+                        For every client tailored approach we
+                        specialize in the renovation and installation of kitchens and
+                        bathrooms, creating spaces that are comfortable, functional, and
+                        beautifully designed to meet your exact needs. Bespoke solutions -
+                        every project is crafted to match your style, preferences, and
+                        lifestyle. We believe that comfort, beauty, and care should come
+                        together in every home. Let us turn your vision of the perfect
+                        kitchen or bathroom into reality - with precision,
+                        quality, and heart.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact__content">
+                    <div class="contact__form">
+                        <h2 class="contact__title">Get in Touch</h2>
+                        <form action="#">
+                            <input type="text" placeholder="Your Name" class="contact__input" required>
+                            <input type="email" placeholder="Your Email" class="contact__input" required>
+                            <textarea placeholder="Your Message" class="contact__textarea" required></textarea>
+                            <button type="submit" class="contact__btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact__aside js-alive-glass">
+                        <h3 class="socials__title">We’d love to hear from you!</h3>
+                        <p class="socials__subtitle"">Fill in the form or reach us on socials.</p>
+                        <div class=" contact__socials">
+                            <a href="https://www.facebook.com/share/17BYyedLwy/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/keyfitters?igsh=YXFpMjh2MTV1cmY="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="social-btn is-email" href="mailto:KO.Fitters@gmail.com" aria-label="Email us">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/447591834651?text=Hi%20Key%20Fitters!" class="wa-link"
+                                target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js defer"></script>
+</body>
+
+</html>
