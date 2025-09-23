@@ -7,13 +7,9 @@ $gold-gradient-3: linear-gradient(90deg, #e6c200, #ffd700, #b8860b);
 
 html,
 body {
+  margin: 0;
   max-width: 100%;
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-html,
-body {
-  overflow-x: clip;
+  overflow-x: hidden; /* без clip і без scrollbar-gutter */
 }
 
 .container {
