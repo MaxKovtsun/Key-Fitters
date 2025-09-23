@@ -128,10 +128,3 @@ document.querySelectorAll(".ba").forEach((el) => {
     }
   });
 });
-btn.addEventListener("click", () => {
-  if (window.innerWidth <= 575) {
-    showLogo = !showLogo;
-    logo.classList.toggle("is-hidden", !showLogo);
-    menu.classList.toggle("is-hidden", showLogo);
-  }
-});

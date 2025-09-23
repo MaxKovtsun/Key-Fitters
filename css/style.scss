@@ -82,7 +82,7 @@ main.stack {
 }
 
 .hero .hero__subtitle {
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: clamp(16px, 2.6vw, 20px);
 }
 
 .hero {
@@ -90,7 +90,7 @@ main.stack {
   padding-bottom: 60px;
   display: grid;
   justify-items: center;
-  align-content: start;
+  align-content: center;
   min-height: 70vh;
   text-align: center;
   color: var(--ink-inv);
@@ -501,6 +501,58 @@ main.stack {
 }
 
 @media (max-width: 575.98px) {
+  .stack,
+  .stack > section,
+  .container,
+  .hero,
+  .services,
+  .about,
+  .contact,
+  header,
+  main,
+  section {
+    position: relative;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .services__content,
+  .about__content,
+  .contact__content,
+  .testi,
+  .testi__track,
+  .testi__slide,
+  .nav__menu {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .stack > section::before,
+  .stack > section::after {
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: 100%;
+    transform: none !important;
+    margin: 0;
+  }
+
+  .nav {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .hero {
+    min-height: 45svh;
+  }
+
+  .hero .hero__card {
+    width: min(100%, 340px);
+  }
+
+  .hero .hero__subtitle {
+    display: none;
+  }
   .nav .logo {
     display: none;
     font-size: 1.5rem;
