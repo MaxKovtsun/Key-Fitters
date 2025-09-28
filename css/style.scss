@@ -5,13 +5,6 @@ $gold-gradient-1: linear-gradient(135deg, #ffd700, #d4af37, #b8860b);
 $gold-gradient-2: linear-gradient(120deg, #ffc300, #ffd700, #c5a028);
 $gold-gradient-3: linear-gradient(90deg, #e6c200, #ffd700, #b8860b);
 
-html,
-body {
-  margin: 0;
-  max-width: 100%;
-  overflow-x: hidden; /* без clip і без scrollbar-gutter */
-}
-
 .container {
   max-width: 1360px;
   margin: 0 auto;

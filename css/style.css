@@ -21,13 +21,6 @@
   --glass-bg: rgba(255, 255, 255, 0.1);
 }
 
-html,
-body {
-  margin: 0;
-  max-width: 100%;
-  overflow-x: hidden; /* без clip і без scrollbar-gutter */
-}
-
 .container {
   max-width: 1360px;
   margin: 0 auto;
