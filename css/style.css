@@ -23,14 +23,9 @@
 
 html,
 body {
+  margin: 0;
   max-width: 100%;
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-
-html,
-body {
-  overflow-x: clip;
+  overflow-x: hidden; /* без clip і без scrollbar-gutter */
 }
 
 .container {
@@ -366,8 +361,13 @@ main.stack::before {
   text-align: center;
   padding-top: 20px;
 }
-.services .services__list {
+.services .services__block {
+  display: flex;
   text-align: center;
+  justify-content: center;
+  gap: 60px;
+}
+.services .services__list {
   font-size: clamp(22px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -376,7 +376,7 @@ main.stack::before {
   color: var(--txt-color);
 }
 .services .services__item {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .testi {
@@ -804,8 +804,8 @@ main.stack::before {
     font-size: 1.5rem;
   }
   .hero .hero__card {
-    margin-inline: auto; /* гарантійне центрування */
-    width: min(100%, 420px); /* на мобілці/вузько — не ширше 320px */
+    margin-inline: auto;
+    width: min(100%, 420px);
   }
   .hero .hero__title {
     font-size: 1.4rem;

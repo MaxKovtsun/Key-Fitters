@@ -5,6 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Fitters LTD</title>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.key-fitters.co.uk/">
+
+    <!-- Basic SEO -->
+    <meta name="description"
+        content="Key Fitters LTD — Kitchen and bathroom renovation and installation in London. High quality, on time, with a guarantee. Free consultation.">
+    <meta name="theme-color" content="#d6f0da">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.key-fitters.co.uk/">
+    <meta property="og:title" content="Key Fitters LTD — Repair & Installation Services">
+    <meta property="og:description" content="Repair, installation, decoration. We work carefully and on time.">
+    <meta property="og:image" content="https://www.key-fitters.co.uk/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Key Fitters — kitchen & bathroom renovation in London">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Key Fitters LTD — Repair & Installation Services">
+    <meta name="twitter:description" content="Repair, installation, decoration. We work carefully and on time.">
+    <meta name="twitter:image" content="https://www.key-fitters.co.uk/img/og-cover.jpg">
+
+
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
@@ -51,14 +81,23 @@
                 <div class="services__content">
                     <div class="services__text js-alive-glass">
                         <h2 class="services__title">Our Services</h2>
-                        <ul class="services__list">
-                            <li class="services__item">Kitchen & Bathroom Installation</li>
-                            <li class="services__item">Flooring & Tiling</li>
-                            <li class="services__item">Doors & Wardrobes</li>
-                            <li class="services__item">Painting & Decorating</li>
-                            <li class="services__item">Wall & Ceiling Repairs</li>
-                            <li class="services__item">Full Fit-Out</li>
-                        </ul>
+                        <div class="services__block">
+                            <ul class="services__list">
+                                <li class="services__item">Bathroom renovation</li>
+                                <li class="services__item">Kitchen renovation</li>
+                                <li class="services__item">Carpentry</li>
+                                <li class="services__item">Painting</li>
+                                <li class="services__item">Plastering</li>
+                            </ul>
+
+                            <ul class="services__list">
+                                <li class="services__item">Plumbing</li>
+                                <li class="services__item">Electrical</li>
+                                <li class="services__item">Flooring</li>
+                                <li class="services__item">Tilling</li>
+                                <li class="services__item">Full fit-out</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="services__projects js-alive-glass">
@@ -126,12 +165,20 @@
                 <div class="contact__content">
                     <div class="contact__form">
                         <h2 class="contact__title">Get in Touch</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Your Name" class="contact__input" required>
-                            <input type="email" placeholder="Your Email" class="contact__input" required>
-                            <textarea placeholder="Your Message" class="contact__textarea" required></textarea>
+                        <form id="contactform" action="https://formspree.io/f/xjkagelq" method="POST" autocomplete="on">
+                            <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                            <input type="email" name="email" placeholder="Email" class="contact__input" required
+                                inputmode="email" autocomplete="email">
+                            <textarea name="message" placeholder="Message" class="contact__textarea"
+                                required></textarea>
+
+                            <!-- honeypot проти спаму -->
+                            <input type="text" name="_gotcha" style="display:none">
+
                             <button type="submit" class="contact__btn">Send Message</button>
+                            <p id="contactStatus" class="contact__status" aria-live="polite"></p>
                         </form>
+
                     </div>
 
                     <div class="contact__aside js-alive-glass">

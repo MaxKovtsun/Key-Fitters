@@ -227,13 +227,18 @@ main.stack {
     padding-top: 20px;
   }
 
-  .services__list {
+  .services__block {
+    display: flex;
     text-align: center;
-    @include m.text__subtitle;
+    justify-content: center;
+    gap: 60px;
   }
 
+  .services__list {
+    @include m.text__subtitle;
+  }
   .services__item {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 }
 
@@ -554,8 +559,8 @@ main.stack {
     font-size: 1.5rem;
   }
   .hero .hero__card {
-    margin-inline: auto; /* гарантійне центрування */
-    width: min(100%, 420px); /* на мобілці/вузько — не ширше 320px */
+    margin-inline: auto;
+    width: min(100%, 420px);
   }
   .hero .hero__title {
     font-size: 1.4rem;

@@ -128,3 +128,69 @@ document.querySelectorAll(".ba").forEach((el) => {
     }
   });
 });
+
+// === Contact form (Formspree AJAX) ===
+(() => {
+  const form = document.getElementById("contactform");
+  if (!form) return;
+
+  const statusEl =
+    document.getElementById("contactStatus") || document.createElement("p");
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  let lastSubmitAt = 0; // простий анти-спам таймер
+
+  const setStatus = (msg) => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // анти-спам: ігноруємо дуже швидкі сабміти
+    const now = Date.now();
+    if (now - lastSubmitAt < 2000) return;
+    lastSubmitAt = now;
+
+    // блок кнопки
+    const originalLabel = submitBtn ? submitBtn.innerHTML : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Sending…";
+    }
+    setStatus("Sending…");
+
+    try {
+      const data = new FormData(form);
+
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+
+      if (res.ok) {
+        form.reset();
+        setStatus("✅ Thanks! We’ll contact you soon.");
+      } else {
+        // спробуємо витягнути помилки від Formspree
+        let msg = "❌ Error. Please try again.";
+        try {
+          const json = await res.json();
+          if (json.errors && Array.isArray(json.errors)) {
+            msg = "❌ " + json.errors.map((e) => e.message).join(", ");
+          }
+        } catch (_) {}
+        setStatus(msg);
+      }
+    } catch (err) {
+      setStatus("⚠️ Network error. Please try again later.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel || "Send Message";
+      }
+    }
+  });
+})();
