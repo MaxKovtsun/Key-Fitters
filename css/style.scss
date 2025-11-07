@@ -515,10 +515,12 @@ main.stack {
   .contact__content,
   .testi,
   .testi__track,
-  .testi__slide,
-  .nav__menu {
+  .testi__slide {
     min-width: 0;
     max-width: 100%;
+  }
+  .nav .nav__menu {
+    display: none;
   }
 
   .stack > section::before,
@@ -535,6 +537,7 @@ main.stack {
     left: 0;
     right: 0;
     width: auto;
+    margin-top: 2px;
   }
   .hero {
     min-height: 45svh;
@@ -548,8 +551,7 @@ main.stack {
     display: none;
   }
   .nav .logo {
-    display: none;
-    font-size: 1.5rem;
+    display: inline;
   }
   .hero .hero__card {
     margin-inline: auto;

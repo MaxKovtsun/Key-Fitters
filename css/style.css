@@ -764,10 +764,12 @@ main.stack::before {
   .contact__content,
   .testi,
   .testi__track,
-  .testi__slide,
-  .nav__menu {
+  .testi__slide {
     min-width: 0;
     max-width: 100%;
+  }
+  .nav .nav__menu {
+    display: none;
   }
   .stack > section::before,
   .stack > section::after {
@@ -782,6 +784,7 @@ main.stack::before {
     left: 0;
     right: 0;
     width: auto;
+    margin-top: 2px;
   }
   .hero {
     min-height: 45svh;
@@ -793,8 +796,7 @@ main.stack::before {
     display: none;
   }
   .nav .logo {
-    display: none;
-    font-size: 1.5rem;
+    display: inline;
   }
   .hero .hero__card {
     margin-inline: auto;
