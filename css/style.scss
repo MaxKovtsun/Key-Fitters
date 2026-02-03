@@ -29,7 +29,7 @@ main.stack {
   right: 0;
   height: var(--nav-h);
   z-index: 999;
-  .nav__inner {
+  &__inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -38,11 +38,11 @@ main.stack {
     justify-content: space-between;
     align-items: center;
   }
-  .nav__menu {
+  &__menu {
     display: flex;
     gap: 40px;
   }
-  .nav__link {
+  &__link {
     font-size: 17px;
     font-weight: 600;
     position: relative;
@@ -53,7 +53,7 @@ main.stack {
     transition: color 0.3s ease;
   }
 
-  .nav__link::after {
+  &__link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -65,13 +65,9 @@ main.stack {
     transform-origin: center;
     transition: transform 0.3s ease;
   }
-  .nav__link:hover::after {
+  &__link:hover::after {
     transform: scaleX(1);
   }
-}
-
-.hero .hero__subtitle {
-  font-size: clamp(16px, 2.6vw, 20px);
 }
 
 .hero {
@@ -85,26 +81,21 @@ main.stack {
   color: var(--ink-inv);
   background: url("../img/header-image-prewiew.jpg") center / cover no-repeat;
   position: relative;
+  .hero .hero__subtitle {
+    font-size: clamp(16px, 2.6vw, 20px);
+  }
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        120% 80% at 50% 20%,
-        rgba(0, 0, 0, 0.18),
-        transparent 60%
-      ),
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.12),
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0.18)
-      );
+    background:
+      radial-gradient(120% 80% at 50% 20%, rgba(0, 0, 0, 0.18), transparent 60%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.18));
     pointer-events: none;
   }
 
-  .hero__card {
+  &__card {
     padding: 30px;
     @include m.glass-alive($bg: transparent);
     padding: clamp(16px, 3vw, 32px);
@@ -112,20 +103,20 @@ main.stack {
     will-change: transform;
     max-width: 900px;
   }
-  .hero__title {
+  &__title {
     @include m.hero__title;
   }
 
-  .hero__subtitle {
+  &__subtitle {
     @include m.text__subtitle;
   }
-  .hero__btn {
+  &__btn {
     @include m.btn;
   }
 }
 .services {
   @include m.background;
-  .services__content {
+  &__content {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -208,29 +199,29 @@ main.stack {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
   }
 
-  .services__text,
-  .services__projects {
+  &__text,
+  &__projects {
     @include m.glass-alive($bg: #6b8f7180);
     color: #fff;
     flex: 1;
   }
-  .services__title {
+  &__title {
     @include m.text__title;
     text-align: center;
     padding-top: 20px;
   }
 
-  .services__block {
+  &__block {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 60px;
   }
 
-  .services__list {
+  &__list {
     @include m.text__subtitle;
   }
-  .services__item {
+  &__item {
     padding-bottom: 20px;
   }
 }
@@ -239,90 +230,85 @@ main.stack {
   width: 100%;
   color: #fff;
   @include m.background;
-}
+  &__slide {
+    @include m.glass-alive($bg: #6b8f7180, $blur: 6px, $radius: 16px);
+    flex: 0 0 100%;
+    padding: clamp(24px, 4vw, 40px);
+    text-align: center;
+  }
 
-.testi__slide {
-  @include m.glass-alive(
-    $bg: #6b8f7180,
-    // теплій беж
-    $blur: 6px,
-    $radius: 16px
-  );
-  flex: 0 0 100%;
-  padding: clamp(24px, 4vw, 40px);
-  text-align: center;
-}
+  &__viewport {
+    max-width: var(--testi-maxw);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+    overflow: hidden;
+  }
 
-.testi__viewport {
-  max-width: var(--testi-maxw);
-  margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 32px);
-  overflow: hidden;
-}
+  &__track {
+    color: var(--txt-color);
+    display: flex;
+    transition: transform var(--testi-speed) ease;
+    gap: 10px;
+  }
+  &__quote {
+    font-size: clamp(18px, 2.2vw, 24px);
+    line-height: 1.5;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
 
-.testi__track {
-  color: var(--txt-color);
-  display: flex;
-  transition: transform var(--testi-speed) ease;
-  gap: 10px;
-}
-.testi__quote {
-  font-size: clamp(18px, 2.2vw, 24px);
-  line-height: 1.5;
-  margin: 0 0 12px;
-  text-wrap: balance;
-}
+  &__author {
+    opacity: 0.85;
+    font-size: 14px;
+  }
 
-.testi__author {
-  opacity: 0.85;
-  font-size: 14px;
-}
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: clamp(16px, 3vw, 24px);
+  }
 
-.testi__dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: clamp(16px, 3vw, 24px);
-}
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
 
-.testi__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.testi__dot.is-active {
-  background: var(--cold-accent);
-  transform: scale(1.2);
+  .testi__dot.is-active {
+    background: var(--cold-accent);
+    transform: scale(1.2);
+  }
 }
 
 .about {
   @include m.background;
-  .about__title {
+  &__title {
     @include m.text__title;
     text-align: center;
   }
-  .about__subtitle {
+  &__subtitle {
     @include m.text__subtitle;
     text-align: center;
   }
-}
-
-.about__content {
-  @include m.glass-alive(
-    $bg: #6b8f7180,
-    // теплій беж
-    $blur: 6px,
-    $radius: 16px
-  );
-  border-radius: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+  &__content {
+    @include m.glass-alive(
+      $bg: #6b8f7180,
+      // теплій беж
+      $blur: 6px,
+      $radius: 16px
+    );
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 }
 
 .contact {
@@ -416,14 +402,6 @@ main.stack {
       transition: 0.3s;
     }
   }
-}
-
-.nav__toggle {
-  display: none;
-  background: transparent;
-  border: 0;
-  line-height: 1;
-  cursor: pointer;
 }
 
 @media (max-width: 991.98px) {

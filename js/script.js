@@ -2,7 +2,7 @@ const aliveCards = document.querySelectorAll(".js-alive-glass");
 
 aliveCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
-    card.style.setProperty("--glow-a", ".22"); // показати пляму
+    card.style.setProperty("--glow-a", ".22");
   });
 
   card.addEventListener("mousemove", (e) => {
@@ -21,25 +21,25 @@ aliveCards.forEach((card) => {
   });
 
   card.addEventListener("mouseleave", () => {
-    card.style.setProperty("--glow-a", "0"); // сховати пляму
-    card.style.setProperty("--glow-x", "50%"); // повернути в центр
+    card.style.setProperty("--glow-a", "0");
+    card.style.setProperty("--glow-x", "50%");
     card.style.setProperty("--glow-y", "50%");
-    card.style.setProperty("--tiltX", "0deg"); // вирівняти нахил
+    card.style.setProperty("--tiltX", "0deg");
     card.style.setProperty("--tiltY", "0deg");
   });
 });
 
 (() => {
   const root = document.querySelector(".testi");
-  if (!root) return; // захист, якщо секції нема
+  if (!root) return;
 
   const track = root.querySelector(".testi__track");
   const slides = Array.from(root.querySelectorAll(".testi__slide"));
   const dotsWrap = root.querySelector(".testi__dots");
 
-  const AUTOPLAY = 3000; // 3 c
+  const AUTOPLAY = 3000;
   let i = 0;
-  let timer = null; // <- зберігаємо єдиний таймер
+  let timer = null;
 
   // --- dots
   slides.forEach((_, idx) => {
@@ -67,7 +67,7 @@ aliveCards.forEach((card) => {
   }
 
   function start() {
-    if (timer) return; // <- не даємо стартувати вдруге
+    if (timer) return;
     timer = setInterval(next, AUTOPLAY);
   }
   function stop() {
@@ -79,17 +79,13 @@ aliveCards.forEach((card) => {
     stop();
     start();
   }
-
-  // Пауза при наведенні/фокусі
   root.addEventListener("mouseenter", stop);
   root.addEventListener("mouseleave", start);
 
-  // Пауза, коли вкладка не активна
   document.addEventListener("visibilitychange", () => {
     document.hidden ? stop() : start();
   });
 
-  // (необов’язково) свайп — якщо ще смикається, просто прибери цей блок
   let x0 = null;
   track.addEventListener("pointerdown", (e) => {
     x0 = e.clientX;
@@ -104,19 +100,16 @@ aliveCards.forEach((card) => {
     x0 = null;
   });
 
-  // init
   render();
   start();
 })();
-// Before/After slider
+
 document.querySelectorAll(".ba").forEach((el) => {
   const range = el.querySelector(".ba__range");
   const set = (v) => el.style.setProperty("--p", `${v}%`);
   set(range.value || 50);
 
   range.addEventListener("input", (e) => set(e.target.value));
-
-  // покращення для клавіатури
   range.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
       range.stepDown();
@@ -129,16 +122,14 @@ document.querySelectorAll(".ba").forEach((el) => {
   });
 });
 
-// === Contact form (Formspree AJAX) ===
 (() => {
   const form = document.getElementById("contactform");
   if (!form) return;
 
-  const statusEl =
-    document.getElementById("contactStatus") || document.createElement("p");
+  const statusEl = document.getElementById("contactStatus") || document.createElement("p");
   const submitBtn = form.querySelector('button[type="submit"]');
 
-  let lastSubmitAt = 0; // простий анти-спам таймер
+  let lastSubmitAt = 0;
 
   const setStatus = (msg) => {
     if (!statusEl) return;
@@ -147,8 +138,6 @@ document.querySelectorAll(".ba").forEach((el) => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    // анти-спам: ігноруємо дуже швидкі сабміти
     const now = Date.now();
     if (now - lastSubmitAt < 2000) return;
     lastSubmitAt = now;
@@ -174,7 +163,6 @@ document.querySelectorAll(".ba").forEach((el) => {
         form.reset();
         setStatus("✅ Thanks! We’ll contact you soon.");
       } else {
-        // спробуємо витягнути помилки від Formspree
         let msg = "❌ Error. Please try again.";
         try {
           const json = await res.json();

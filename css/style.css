@@ -103,7 +103,7 @@ main.stack::before {
   height: var(--nav-h);
   z-index: 999;
 }
-.nav .nav__inner {
+.nav__inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -112,11 +112,11 @@ main.stack::before {
   justify-content: space-between;
   align-items: center;
 }
-.nav .nav__menu {
+.nav__menu {
   display: flex;
   gap: 40px;
 }
-.nav .nav__link {
+.nav__link {
   font-size: 17px;
   font-weight: 600;
   position: relative;
@@ -126,7 +126,7 @@ main.stack::before {
   padding: 4px 0;
   transition: color 0.3s ease;
 }
-.nav .nav__link::after {
+.nav__link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -138,12 +138,8 @@ main.stack::before {
   transform-origin: center;
   transition: transform 0.3s ease;
 }
-.nav .nav__link:hover::after {
+.nav__link:hover::after {
   transform: scaleX(1);
-}
-
-.hero .hero__subtitle {
-  font-size: clamp(16px, 2.6vw, 20px);
 }
 
 .hero {
@@ -158,6 +154,9 @@ main.stack::before {
   background: url("../img/header-image-prewiew.jpg") center/cover no-repeat;
   position: relative;
 }
+.hero .hero .hero__subtitle {
+  font-size: clamp(16px, 2.6vw, 20px);
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -165,7 +164,7 @@ main.stack::before {
   background: radial-gradient(120% 80% at 50% 20%, rgba(0, 0, 0, 0.18), transparent 60%), linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.18));
   pointer-events: none;
 }
-.hero .hero__card {
+.hero__card {
   padding: 30px;
   background: transparent;
   backdrop-filter: blur(6px) saturate(1.08);
@@ -189,13 +188,13 @@ main.stack::before {
   will-change: transform;
   max-width: 900px;
 }
-.hero .hero__title {
+.hero__title {
   font-size: clamp(24px, 3.4vw, 44px);
   line-height: 1.15;
   margin: 0 0 0.6rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
-.hero .hero__subtitle {
+.hero__subtitle {
   font-size: clamp(22px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -203,7 +202,7 @@ main.stack::before {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   color: var(--txt-color);
 }
-.hero .hero__btn {
+.hero__btn {
   display: inline-block;
   padding: 0.8rem 1.35rem;
   color: var(--ink-inv);
@@ -214,12 +213,12 @@ main.stack::before {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-.hero .hero__btn:hover {
+.hero__btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
 }
-.hero .hero__btn:active {
+.hero__btn:active {
   transform: translateY(0);
 }
 
@@ -242,7 +241,7 @@ main.stack::before {
   background-repeat: repeat-x;
   background-size: 120px 60px, 100% 100%;
 }
-.services .services__content {
+.services__content {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -321,8 +320,7 @@ main.stack::before {
   border: 0;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
 }
-.services .services__text,
-.services .services__projects {
+.services__text, .services__projects {
   background: rgba(107, 143, 113, 0.5019607843);
   backdrop-filter: blur(6px) saturate(1.08);
   -webkit-backdrop-filter: blur(6px) saturate(1.08);
@@ -343,7 +341,7 @@ main.stack::before {
   color: #fff;
   flex: 1;
 }
-.services .services__title {
+.services__title {
   font-size: clamp(35px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -354,13 +352,13 @@ main.stack::before {
   text-align: center;
   padding-top: 20px;
 }
-.services .services__block {
+.services__block {
   display: flex;
   text-align: center;
   justify-content: center;
   gap: 60px;
 }
-.services .services__list {
+.services__list {
   font-size: clamp(22px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -368,7 +366,7 @@ main.stack::before {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   color: var(--txt-color);
 }
-.services .services__item {
+.services__item {
   padding-bottom: 20px;
 }
 
@@ -390,7 +388,6 @@ main.stack::before {
   background-repeat: repeat-x;
   background-size: 120px 60px, 100% 100%;
 }
-
 .testi__slide {
   background: rgba(107, 143, 113, 0.5019607843);
   backdrop-filter: blur(6px) saturate(1.08);
@@ -413,40 +410,34 @@ main.stack::before {
   padding: clamp(24px, 4vw, 40px);
   text-align: center;
 }
-
 .testi__viewport {
   max-width: var(--testi-maxw);
   margin: 0 auto;
   padding: 0 clamp(16px, 3vw, 32px);
   overflow: hidden;
 }
-
 .testi__track {
   color: var(--txt-color);
   display: flex;
   transition: transform var(--testi-speed) ease;
   gap: 10px;
 }
-
 .testi__quote {
   font-size: clamp(18px, 2.2vw, 24px);
   line-height: 1.5;
   margin: 0 0 12px;
   text-wrap: balance;
 }
-
 .testi__author {
   opacity: 0.85;
   font-size: 14px;
 }
-
 .testi__dots {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: clamp(16px, 3vw, 24px);
 }
-
 .testi__dot {
   width: 10px;
   height: 10px;
@@ -456,8 +447,7 @@ main.stack::before {
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
-
-.testi__dot.is-active {
+.testi .testi__dot.is-active {
   background: var(--cold-accent);
   transform: scale(1.2);
 }
@@ -478,7 +468,7 @@ main.stack::before {
   background-repeat: repeat-x;
   background-size: 120px 60px, 100% 100%;
 }
-.about .about__title {
+.about__title {
   font-size: clamp(35px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -488,7 +478,7 @@ main.stack::before {
   font-weight: 600;
   text-align: center;
 }
-.about .about__subtitle {
+.about__subtitle {
   font-size: clamp(22px, 1.25vw, 18px);
   line-height: 1.6;
   margin: 0 0 1.1rem;
@@ -497,7 +487,6 @@ main.stack::before {
   color: var(--txt-color);
   text-align: center;
 }
-
 .about__content {
   background: rgba(107, 143, 113, 0.5019607843);
   backdrop-filter: blur(6px) saturate(1.08);
@@ -674,14 +663,6 @@ main.stack::before {
   font-size: 22px;
   color: var(--cold-accent);
   transition: 0.3s;
-}
-
-.nav__toggle {
-  display: none;
-  background: transparent;
-  border: 0;
-  line-height: 1;
-  cursor: pointer;
 }
 
 @media (max-width: 991.98px) {
